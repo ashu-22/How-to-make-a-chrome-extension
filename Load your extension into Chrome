@@ -1,0 +1,5 @@
+To load your extension into chrome, open up chrome://extensions/ in your browser and click "Developer mode" in top right.
+Now click "load unpacked extension..." and select the extension's directory.you should now seen your extension in the list.
+
+When you change or add the code in your extensions, just come back to this page and reload the page.
+Chrome will load your extensions.
