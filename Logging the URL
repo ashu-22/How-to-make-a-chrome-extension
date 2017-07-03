@@ -1,0 +1,30 @@
+jQuery is not necessary, but it makes everything easier.First download a version of jQuery from the JQuery CDN and put it on your extension's
+folder. I downloaded the latest minified version, Jquery -2.1.3.min.js. To load it, add it to manifest.json before "content.js".
+Your whole manifest.json should look like this.
+
+{
+"manifest_version" : 2,
+"name": "My Cool Extension" ,
+"version": "0.1",
+"content_scripts" : [
+{
+"matches" : [
+<"call_urls">
+],
+"js":["jquery-2.1.3.min.js", "content.js" ]
+}
+]
+}
+
+Now that we have the jQuery, let's use it to log the URL of the first external link on the page in the content.js :
+
+
+//content.js
+var firstHref = $("a[href^ = 'http']").eq(0).attr("href");
+console.log("FirstHref");
+
+//Note that we do not need to use jQuery to check if the document has loaded.By default, chrome injects content scripts after the DOM
+is complete.
+
+Try it out - you should see the output in your console on every page you visit.
+
