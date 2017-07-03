@@ -1,0 +1,11 @@
+When an extension adds a little icon next to your address bar, that's a browser action.Your extension
+can listen for clicks on that button and then do something.
+
+Put the icon.png from Google's extension tutorial in your extension folder and add this to manifest.json :
+
+"browser_action" : {
+"default_icon" : "icon.png"
+}
+
+//In order to use the browser action, we need to add message passing.
+
